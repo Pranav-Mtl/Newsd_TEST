@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'MyReleaseKey'
+            keyPassword 'newsdmedia'
+            storeFile file('C:/Users/Balram/keystore.newsd.jks')
+            storePassword 'newsdmedia'
+        }
+    }
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        applicationId "com.media.newsd"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 4
+        versionName "2.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            debuggable false
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'se.emilsjolander:android-flipview:1.1.0'
+    compile('com.mikepenz:materialdrawer:3.0.7@aar') {
+        transitive = true
+    }
+    compile files('libs/android-smart-image-view-1.0.0.jar')
+    compile 'com.android.support:design:22.2.0'
+    compile project(':recycleview')
+    compile files('libs/json-lib-2.4-jdk15.jar')
+    compile files('libs/json-simple-1.1.jar')
+    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.facebook.android:facebook-android-sdk:4.1.0'
+    compile files('libs/FlurryAnalytics-5.6.0.jar')
+}
