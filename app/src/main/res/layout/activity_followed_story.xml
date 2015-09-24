@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingRight="15dp"
+            android:text="Timeline"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!--<TextView
+            android:id="@+id/textview_story"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:text="Followed Story"
+            android:gravity="center"
+            android:background="@color/saffron"
+            />-->
+
+        <ListView
+
+            android:id="@+id/story_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:cacheColorHint="#00000000"
+            android:choiceMode="singleChoice"
+            android:divider="#e4e4e4"
+            android:dividerHeight="1dp"
+
+            android:footerDividersEnabled="true"
+            android:gravity="center"
+            android:numColumns="auto_fit" >
+        </ListView>
+    </RelativeLayout>
+</LinearLayout>

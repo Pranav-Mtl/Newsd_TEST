@@ -1,0 +1,411 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:id="@+id/newsscreen"
+    tools:context=".MainActivity">
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/sub_body"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <com.loopj.android.image.SmartImageView
+                    android:id="@+id/news_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/newsd_big_pic"
+                    android:minHeight="300dp"
+                    android:scaleType="centerCrop"
+                     />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"
+                    android:background="@drawable/fashion_icon" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/layout_hit_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:gravity="center_horizontal"
+                    android:layout_alignParentLeft="true"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upper_hand"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Categories"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+                        android:background="@color/saffron"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_hit_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:gravity="center_horizontal"
+                    android:layout_alignParentLeft="true"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upper_arrow"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Click to get latest story"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+                        android:background="@color/saffron"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_hit_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="70dp"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone"
+
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upper_arrow"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Event"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+                        android:background="@color/saffron"
+                        />
+
+                </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_gotit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/okbtn"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#fff"
+                        android:text="Got It"
+                        android:visibility="gone"
+                        />
+
+                <!--    <LinearLayout
+                        android:id="@+id/post_heading_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/post_heading_img"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                    </LinearLayout>-->
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/sub_body"
+                >
+
+
+                    <TextView
+                        android:id="@+id/post_heading"
+                        android:layout_width="220dp"
+                        android:layout_height="40dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:gravity="left"
+                        android:background="#000"
+                        android:text="cccc"
+                        android:textColor="#fff" />
+
+
+
+
+                <ImageView
+                        android:id="@+id/news_divider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/post_heading"
+                        android:background="@drawable/post_title_divider" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/llcenter"
+                        android:background="#000"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:layout_toRightOf="@id/news_divider"
+                        android:layout_height="40dp">
+
+                        <ImageButton
+                            android:id="@+id/img_btn_add_post_bookmark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/bookmark_big" />
+
+                        <ImageButton
+                            android:id="@+id/img_btn_post_setting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/post_setting_img" />
+
+
+
+                        <ImageButton
+                            android:id="@+id/img_btn_post_share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/post_share_img_default" />
+
+
+                    </RelativeLayout>
+
+
+
+
+
+
+                <TextView
+                android:id="@+id/newsline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llcenter"
+                android:background="@drawable/news_dropdown"
+                />
+            <TextView
+                android:id="@+id/post_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:paddingTop="10dp"
+                android:layout_below="@id/newsline"
+                android:layout_marginLeft="5dp"
+                android:maxLines = "10"
+                android:scrollbars = "vertical"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="30dp"
+                android:textColor="#000" />
+
+                <LinearLayout
+                    android:id="@+id/layout_hit_read_story"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/post_heading"
+                    android:layout_marginTop="-10dp"
+                    android:visibility="gone"
+                    android:gravity="center_horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upper_hand"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="click to get full story"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+                        android:background="@color/saffron"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_hit_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone"
+                    android:layout_alignParentRight="true"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/upper_hand"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Follow tags \n &amp;  Timeline story"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+                        android:background="@color/saffron"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_hit_swipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_above="@id/add_post_layout"
+                    android:layout_marginBottom="40dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/swpie_arrow"
+                        android:layout_centerInParent="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Swipe to read next story"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_hit_breaking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_above="@id/add_post_layout"
+                    android:layout_marginBottom="20dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap to Open Breaking News"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:padding="5dp"
+                        android:background="@color/saffron"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/down_hand"
+                        android:layout_centerInParent="true"
+                        />
+                </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/add_post_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/post_text"
+                android:background="#ffffff"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="-30dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:weightSum="5">
+               <!-- <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/just_newsd"
+                    android:layout_weight="1"/>
+-->
+                <TextView
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/ticker_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_vertical"
+                    android:background="#EBEBEB"
+                    android:clickable="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:lines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="#000"
+                    android:layout_weight="4"/>
+          <!--      <ImageButton
+                    android:id="@+id/btn_add_post"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/add_post"
+                    android:layout_weight="0.9"/>-->
+
+
+            </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#000"
+            android:minHeight="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingRight="10dp"
+                android:text="Previous Event"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+        </android.support.v7.widget.Toolbar>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <com.loopj.android.image.SmartImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/pregalll_img"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_marginTop="-20dp"
+            >
+            <TextView
+                android:id="@+id/previous_news_title"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textColor="#fff"
+                android:paddingLeft="5dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/previous_news_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:layout_gravity="right"
+                android:text="dddd"
+                android:paddingRight="5dp"
+                android:gravity="right"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_gravity="start"
+            android:id="@+id/detail"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Gallery"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="20dp"
+
+            />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/nine"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <com.loopj.android.image.SmartImageView
+
+                    android:id="@+id/preone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:visibility="gone"
+                    android:scaleType="fitCenter" />
+
+                <com.loopj.android.image.SmartImageView
+
+                    android:id="@+id/pretwo"
+                    android:visibility="gone"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginRight="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <com.loopj.android.image.SmartImageView
+
+                    android:id="@+id/prethree"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:visibility="gone"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter" />
+
+                <com.loopj.android.image.SmartImageView
+
+                    android:id="@+id/prefour"
+                    android:visibility="gone"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/ten"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                <com.loopj.android.image.SmartImageView
+
+                    android:id="@+id/prefive"
+                   android:layout_gravity="left"
+                    android:layout_alignParentLeft="true"
+                    android:visibility="gone"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter" />
+
+                <com.loopj.android.image.SmartImageView
+
+                    android:id="@+id/presix"
+                    android:visibility="gone"
+                   android:layout_gravity="right"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginRight="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <com.loopj.android.image.SmartImageView
+
+                        android:id="@+id/preseven"
+                        android:layout_gravity="left"
+                        android:layout_alignParentLeft="true"
+                        android:visibility="gone"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitCenter" />
+
+                    <com.loopj.android.image.SmartImageView
+
+                        android:id="@+id/preeight"
+                        android:visibility="gone"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+
+                        android:layout_marginRight="20dp"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitCenter" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

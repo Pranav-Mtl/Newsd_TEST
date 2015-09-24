@@ -1,0 +1,231 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.android.appslure.newsd.Search">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingRight="10dp"
+            android:text="@string/search_header"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+</android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/search_bg"
+        >
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="fill_parent"
+            android:layout_marginRight="30dp"
+            android:textColorHint="#757575"
+            android:textColor="#757575"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:hint="Search for sources, people, news..."
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="-30dp"
+            android:background="@drawable/search_btn"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="fill_parent">
+        <ListView
+            android:id="@+id/search_result_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:cacheColorHint="#00000000"
+            android:choiceMode="singleChoice"
+            android:divider="#e4e4e4"
+            android:dividerHeight="1dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:footerDividersEnabled="true"
+            android:gravity="center"
+            android:numColumns="auto_fit" >
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/layout_suggest_images"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="2"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="fill_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Trending Today"
+                android:textColor="#000"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:layout_height="wrap_content" />
+         <!-- <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                >
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/saffron"
+                    android:text="Trending topics : "
+                    android:textColor="#000"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginBottom="0dp"
+                    />
+            </LinearLayout>-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:layout_weight=".5"
+                    >
+                    <com.loopj.android.image.SmartImageView
+                        android:id="@+id/search_suggestion_one"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        >
+                        </com.loopj.android.image.SmartImageView>
+
+                    <TextView
+                        android:id="@+id/trending_title_one"
+                        android:layout_width="fill_parent"
+                        android:paddingLeft="5dp"
+                        android:textColor="#000"
+                        android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    >
+
+                    <com.loopj.android.image.SmartImageView
+                        android:id="@+id/search_suggestion_two"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+
+
+                        >
+
+
+
+                    </com.loopj.android.image.SmartImageView>
+
+
+                    <TextView
+                        android:id="@+id/trending_title_two"
+                        android:layout_width="wrap_content"
+
+                        android:paddingLeft="5dp"
+                        android:textColor="#000"
+                        android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+                <com.loopj.android.image.SmartImageView
+                    android:id="@+id/search_suggestion_Three"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+
+                    >
+                </com.loopj.android.image.SmartImageView>
+
+
+                <TextView
+                    android:id="@+id/trending_title_three"
+                    android:layout_width="wrap_content"
+
+                    android:paddingLeft="5dp"
+                    android:textColor="#000"
+                    android:layout_height="wrap_content" />
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <com.loopj.android.image.SmartImageView
+                android:id="@+id/search_suggestion_four"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+
+                >
+            </com.loopj.android.image.SmartImageView>
+            <TextView
+                android:id="@+id/trending_title_four"
+                android:layout_width="wrap_content"
+
+                android:paddingLeft="5dp"
+                android:textColor="#000"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+            </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/search_progress_dialog"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

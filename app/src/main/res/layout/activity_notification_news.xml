@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:id="@+id/notification_mainnews"
+    tools:context="com.android.appslure.newsd.BookMarkedNews">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/bookmarked_header"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#000"
+            android:minHeight="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingRight="10dp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </android.support.v7.widget.Toolbar>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_below="@id/bookmarked_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/sub_body"
+            android:layout_width="match_parent"
+            android:layout_height="308dp">
+
+            <com.loopj.android.image.SmartImageView
+                android:id="@+id/news_img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/newsd_big_pic"
+                android:minHeight="300dp"
+                android:scaleType="centerCrop" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:background="@drawable/fashion_icon" />
+
+            <LinearLayout
+                android:id="@+id/post_heading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#000"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <include layout="@layout/flip_middle_options"/>
+                <TextView
+                    android:id="@+id/newsline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/news_dropdown"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/sub_body"
+            >
+            <TextView
+                android:id="@+id/post_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="10dp"
+                android:text=""
+                android:textColor="#000" />
+            <LinearLayout
+                android:id="@+id/add_post_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/post_text"
+                android:background="#ffffff"
+                android:paddingBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+
+                <TextView
+                    android:id="@+id/ticker_text"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:background="#EBEBEB"
+
+                    android:clickable="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:lines="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#000"
+                    android:layout_weight="5"/>
+                <!--      <ImageButton
+                          android:id="@+id/btn_add_post"
+                          android:layout_width="0dp"
+                          android:layout_height="36dp"
+                          android:layout_alignParentRight="true"
+                          android:layout_gravity="center_vertical"
+                          android:layout_marginRight="10dp"
+                          android:background="@drawable/add_post"
+                          android:layout_weight="0.9"/>-->
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

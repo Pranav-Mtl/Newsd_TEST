@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+
+    >
+    <LinearLayout
+        android:id="@+id/first"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:background="#ff7e16"
+        android:layout_height="50dp"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Upcoming Events"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:gravity="center"
+
+            />
+
+        </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/second"
+        android:layout_below="@id/first"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        >
+        <EditText
+            android:id="@+id/upcomingSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/search_bar"
+            android:hint="Search Events"
+            android:textColorHint="#e4e4e4"
+            android:paddingLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="#000000"
+
+            />
+        <Button
+            android:id="@+id/up_search"
+            android:layout_alignParentRight="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/search_icon"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/smarView"
+        android:layout_below="@id/second"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:layout_height="fill_parent">
+
+
+            <ListView
+                android:id="@+id/searchImg"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#000"
+                android:cacheColorHint="#00000000"
+                android:choiceMode="singleChoice"
+                android:divider="#000"
+                android:dividerHeight="10dp"
+
+                android:footerDividersEnabled="true"
+                android:gravity="center"
+                android:numColumns="auto_fit"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+           </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,272 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+
+   >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000"
+        android:layout_alignParentTop="true"
+        android:minHeight="?attr/actionBarSize">
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/categories_header"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+</android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/textview"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:background="#ff7e18"
+       android:layout_below="@id/toolbar"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Select"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
+            />
+
+        </LinearLayout>
+    <ScrollView
+        android:layout_below="@id/textview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_marginTop="25dp"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/jammu"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jammu"
+        />
+        <TextView
+            android:id="@+id/text"
+            android:layout_alignRight="@id/jammu"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Jammu  and  Kashmir - Punjab - Himanchal Pradesh"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/first"
+        android:id="@+id/second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/haryana"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/haryanarahasthan"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="90dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Haryana - Rajasthan"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/second"
+        android:id="@+id/third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/delhi"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/delhincr"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="90dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Delhi NCR"
+
+            android:textColor="#000000"
+            android:textSize="15dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/third"
+        android:id="@+id/four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/utterakhand"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/utterpradesh"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="90dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Uttar Pradesh - Uttarakhand"
+
+            android:textColor="#000000"
+            android:textSize="15dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:layout_below="@id/four"
+    android:id="@+id/five"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/gurjat"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gujrat"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="90dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Gujarat"
+
+        android:textColor="#000000"
+        android:textSize="15dp"
+        />
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/five"
+        android:id="@+id/six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/mp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mp2"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="90dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Madhya Pradesh - Chhatishgarh"
+
+            android:textColor="#000000"
+            android:textSize="15dp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/six"
+        android:id="@+id/seven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/bihar"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bihar"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="90dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Bihar-Jharkhand"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            />
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/seven"
+            android:id="@+id/nextbtn"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#ff7e18"
+        android:text="Next"
+
+        android:textSize="15dp"
+        android:layout_marginBottom="30dp"
+
+        />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

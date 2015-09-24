@@ -1,0 +1,143 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.android.appslure.newsd.MapFragmentThree">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/textview"
+            android:layout_width="fill_parent"
+            android:background="#ff7e18"
+            android:layout_below="@id/toolbar"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select your state/s"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="#ffffff"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4.5"
+        android:background="#fff"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/eleven"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical"
+            android:layout_height="0dp">
+
+            <ImageButton
+                android:id="@+id/telangna"
+                android:focusable="false"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/telangna"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+
+                android:text="Andhra Pradesh · Telangana · Tamil Nadu"
+                android:paddingLeft="5dp"
+                android:textSize="15dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:id="@+id/twelve"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <ImageButton
+                android:id="@+id/karnatka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="false"
+                android:background="@drawable/karnatka"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Karnataka"
+
+                android:paddingLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:id="@+id/thirteen"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <ImageButton
+                android:id="@+id/kerala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="false"
+                android:background="@drawable/kerala"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Kerala"
+                android:paddingLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="0dp">
+
+            <Button
+                android:id="@+id/map_btn_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Done"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/customized_button"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,131 @@
+package com.android.BL;
+
+import com.android.BE.UpcomingNewBE;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+
+/**
+ * Created by appslure on 7/16/2015.
+ */
+public class UpcomingNewsBL {
+
+    String status;
+
+    UpcomingNewBE objUpcomingNewBE;
+    public String getPreviousEventData(String eventID,UpcomingNewBE objUpcomingNewBE) {
+
+        this.objUpcomingNewBE=objUpcomingNewBE;
+
+        System.out.println("inside the wedSERCES-----"+eventID);
+        try {
+            String result = fetRecord(eventID);
+            status = validate(result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+
+
+    private String fetRecord(String eventID)
+    {
+        String text = null;
+
+        //http://newsd.in/demo1/ws/event_detail.php?news_id=6
+        //http://newsd.in/demo1/ws/event.php?type=previous
+        //http://newsd.in/demo1/ws/event.php?type=up
+        //http://unitedbysport.in/demo19/index.php/webservice/login?email=ballu@ballu.com&password=ballu
+        //?fullname=Balram%20patel&email=ballu@ballu.com&password=dfss&age=21&gender=male&location=delhi";
+        String url="news_id="+eventID;
+        try
+        {
+            URI uri = new URI("http", "www.newsd.in", "/demo1/ws/event_detail",url, null);
+            System.out.println("URI"+uri);
+            String value=uri.toASCIIString();
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpContext localContext = new BasicHttpContext();
+            HttpGet httpGet=new HttpGet(value);
+            HttpResponse response = httpClient.execute(httpGet, localContext);
+            HttpEntity entity = response.getEntity();
+            text = getASCIIContentFromEntity(entity);
+            System.out.println("TEXT RETURN BY THE------------>"+text);
+        }
+        catch (Exception e)
+        {
+            System.out.println("in web services catch block");
+            e.printStackTrace();
+            return e.getLocalizedMessage();
+        }
+        return text;
+    }
+
+
+    public String validate(String strValue)
+    {
+
+        System.out.println("the value of strValue===  "+strValue);
+        String  status="";
+        if(strValue.equals("[]"))
+        {
+            status="empty";
+        }
+        else {
+            status="data";
+            JSONParser jsonP = new JSONParser();
+            try {
+                Object obj = jsonP.parse(strValue);
+                JSONArray jsonArrayObject = (JSONArray) obj;
+
+                JSONObject jsonObject = (JSONObject) jsonP.parse(jsonArrayObject.get(0).toString());
+
+                objUpcomingNewBE.setDescription(jsonObject.get("description").toString());
+                objUpcomingNewBE.setTitle(jsonObject.get("title").toString());
+                objUpcomingNewBE.setHeaderImage(jsonObject.get("header_image").toString());
+                objUpcomingNewBE.setGalleryImageOne(jsonObject.get("image1").toString());
+                objUpcomingNewBE.setGalleryImageTwe(jsonObject.get("image2").toString());
+                objUpcomingNewBE.setGalleryImageThree(jsonObject.get("image3").toString());
+                objUpcomingNewBE.setGalleryImageFour(jsonObject.get("image4").toString());
+                objUpcomingNewBE.setGalleryImageFive(jsonObject.get("image5").toString());
+                objUpcomingNewBE.setGalleryImageSix(jsonObject.get("image6").toString());
+                objUpcomingNewBE.setGalleryImageSeven(jsonObject.get("image7").toString());
+                objUpcomingNewBE.setGalleryImageEight(jsonObject.get("image8").toString());
+                objUpcomingNewBE.setEventdate(jsonObject.get("event_date").toString());
+
+
+            } catch (Exception e) {
+                System.out.println("in second catch block");
+                e.printStackTrace();
+            }
+        }
+        return status;
+    }
+
+
+
+
+    protected String getASCIIContentFromEntity(HttpEntity entity) throws IllegalStateException, IOException {
+        InputStream in = entity.getContent();
+        StringBuffer out = new StringBuffer();
+        int n = 1;
+        while (n>0) {
+            byte[] b = new byte[4096];
+            n =  in.read(b);
+            if (n>0) out.append(new String(b, 0, n));
+        }
+        return out.toString();
+    }
+
+}

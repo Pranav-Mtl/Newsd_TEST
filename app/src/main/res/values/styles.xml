@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyCustomDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="ThemeSpinnerDrop" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:dropDownListViewStyle">@style/spinner_style</item>
+    </style>
+
+    <style name="spinner_style" parent="android:Widget.ListView.DropDown">
+    <item name="android:divider">#000000</item>
+    <item name="android:showDividers">middle</item>
+    <item name="android:dividerHeight">.3dp</item>
+</style>
+
+    <style name="facebook_app_id">901083646651958</style>
+
+</resources>

@@ -1,0 +1,123 @@
+<!--<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flipview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/DrawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="7dp">
+
+
+
+        <include layout="@layout/toolbar_home_screen"/>
+
+        <se.emilsjolander.flipview.FlipView
+            android:id="@+id/flip_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="50dp"
+            android:background="#ffffff"
+            android:clickable="false"
+            android:focusable="false"
+            flipview:orientation="horizontal"
+            tools:context=".DemoViewFlipperActivity">
+
+        </se.emilsjolander.flipview.FlipView>
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Empty!"
+            android:textSize="32sp"
+            android:visibility="gone" />
+
+        <!--<ViewFlipper
+            android:id="@+id/viewflipper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="6dp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Test 1"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/just_newsd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Test 2"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/fashion_icon" />
+            </LinearLayout>
+
+
+        </ViewFlipper>-->
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:orientation="horizontal" >
+
+            <ListView
+                android:id="@+id/left_list"
+                android:layout_width="150dip"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:divider="#e4e4e4"
+                android:dividerHeight="2dp" >
+            </ListView>
+
+            <ListView
+                android:id="@+id/right_list"
+                android:layout_width="150dip"
+                android:layout_height="match_parent"
+                android:background="#FFf"
+                android:divider="#e4e4e4"
+                android:dividerHeight="2dp" >
+            </ListView>
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</merge>
+
+    <!--</LinearLayout>-->

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+
+        >
+        <com.loopj.android.image.SmartImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/galll_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:scaleType="centerCrop" />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail's"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+
+            />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+           >
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="left"
+                android:layout_weight="2"
+                android:id="@+id/detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="text heren"
+                android:textColor="#000000"
+
+                />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Gallery"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="20dp"
+
+            />
+
+        </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <com.loopj.android.image.SmartImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/multipleImg"
+            android:layout_marginLeft="20dp"
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/one"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/two"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/three"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/four"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/five"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/six"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <com.loopj.android.image.SmartImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/seven"
+                android:layout_marginLeft="20dp"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+
+                android:scaleType="centerCrop" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

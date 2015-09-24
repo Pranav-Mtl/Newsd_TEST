@@ -1,0 +1,217 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+     >
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#000000"
+        >
+        <Button
+            android:id="@+id/backbtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+           android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/back_button"
+            />
+        <Button
+            android:layout_marginTop="6dp"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@id/backbtn"
+            android:layout_marginLeft="28dp"
+            android:background="@drawable/new_logo"
+            />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="People"
+                android:textSize="18dp"
+                android:layout_marginTop="6dp"
+                android:textColor="#ffffff"
+
+                />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchbar"
+        android:layout_below="@id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+
+        >
+        <EditText
+            android:layout_alignParentLeft="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint=" Search for People"
+            android:paddingLeft="20dp"
+            android:textSize="18dp"
+            android:textColorHint="#000000"
+            android:background="@drawable/search_bar"
+            />
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_icon"
+
+            />
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/text"
+        android:layout_below="@id/searchbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suggestion's"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            />
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/imgone"
+        android:layout_below="@id/text"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/imgback_logo"
+                />
+            <Button
+                android:id="@+id/followedone"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/followed_unclicked"
+
+                />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/imgback_logo"
+                    />
+                <Button
+                    android:id="@+id/followone"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    />
+
+            </RelativeLayout>
+
+            </LinearLayout>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_marginTop="20dp"
+    android:layout_below="@id/imgone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/imgback_logo"
+                    />
+                <Button
+                    android:id="@+id/followedtwo"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/followed_unclicked"
+
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/imgback_logo"
+                    />
+                <Button
+                    android:id="@+id/follow_two"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/moon"
+    android:background="@android:color/transparent"
+    android:gravity="end"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/folloback"
+        android:layout_alignParentRight="true"
+
+        >
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="130dp"
+            android:text="Follow"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            />
+        <Button
+            android:id="@+id/follow_tag_one"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:layout_gravity="left"
+            android:background="@drawable/follobtn"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"
+
+            android:visibility="invisible"
+            />
+        <Button
+            android:id="@+id/btn_follow_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/customized_button"
+            android:text="Done"
+            android:textSize="12dp"
+            />
+        <Button
+            android:id="@+id/follow_tag_two"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:layout_gravity="left"
+            android:background="@drawable/follobtn"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"
+
+            android:visibility="invisible"
+            />
+        <Button
+            android:id="@+id/btn_follow_story"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/customized_button"
+            android:text="Timeline"
+            android:textSize="12dp"
+            />
+        <Button
+            android:id="@+id/follow_tag_three"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="70dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="left"
+            android:paddingLeft="20dp"
+            android:drawablePadding="10dp"
+            android:background="@drawable/follobtn"
+
+            android:visibility="invisible"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

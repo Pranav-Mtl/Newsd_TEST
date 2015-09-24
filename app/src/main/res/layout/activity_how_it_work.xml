@@ -1,0 +1,596 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.android.appslure.newsd.HowItWork">
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="50dp">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingRight="10dp"
+            android:text="How It Works"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Category Selection Screen"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="Tap the Categories you are interested in. The tick mark shows the selected categories. Once you are done selecting, tap on Get newsd to start reading.Newsd only provides content that is relevant to you."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Beyond Metros"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="Tap the States you are interested in. Once finished, tap Done to go back to the Category Selection screen."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="People Screen"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="Type the name of the person you want to follow and select the name from the suggestions appearing to add that person to your list. To remove a person from your list, simply tap on the remove icon given against that name."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Story Navigation"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="Swipe left to move on to the next story. To go back to a previous story, swipe right."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Web View"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="To read the full story, tap on the headline."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Bookmark Icon"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="If you want to save a story for reading at a later time, tap on the bookmark icon. All your bookmarked stories will be available under the bookmark tab."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Follow Icon"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="To follow the tags associated with a particular story, tap on the Pugmark icon. This will show you the tags related to that story. You can tap on the tags you want to follow and select Done. You will be able to view all your followed tags in the ‘I am Following’ section under the Profile tab."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Timeline Icon"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="If you want to view any of the previously published articles related to a particular story, tap on the Pugmark icon and select Timeline. You can now access this story from the Timeline section under the Profile tab and will be able to view all the previous articles related to it."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Share Icon"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="If you want to share a particular story with someone, tap on the Share icon to send them a link to that story."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Category Tab"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="If you want to read the news of some other category that you haven’t selected, tap on the Category Tab to get a list of all the Categories. From this list just tap on the category you are interested in and start reading."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Newsd Home Button"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="To jump back to the last read news in your choice of categories, tap on the newsd icon."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile Tab"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="To add/delete categories from your selection, view your followed tags and timelines or browse through the App Tutorial, tap on the Profile icon."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="My Categories"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="To add or delete any category from your selection, just tap on the respective categories and select Update. The tick mark shows the categories currently selected by you."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Timeline Page"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="The Timeline page lists all the stories timelined by you. To view all the previously published articles related to a particular story, tap on the timeline icon next to the respective story. To remove any story from your timeline, tap on the remove icon next to that story."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Following Page"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="The Following page lists all the tags and people followed by you. Tap on the person/tag to view news related to that particular person/tag."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Events Tab"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="To search for a particular event, type the name of the event in the search bar. Tap Join Now to become a part of an Upcoming Event. Tap on any event to get the details of that event."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Bookmark Tab"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="You can view all the stories saved by you in this page. Just tap on a story to read. If you want to remove any bookmarked story, tap on the remove icon next to that story."
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Search Tab"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="You can search for any particular story by typing in the search bar or read any of the day’s top trending stories by tapping on the stories displayed."
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Breaking News Ticker"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/saffron"
+                android:paddingTop="5dp"
+                android:text="By tapping on the breaking news ticker, you can directly jump on to todays breaking news. You can tap the Back button to go back to your last read news."
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

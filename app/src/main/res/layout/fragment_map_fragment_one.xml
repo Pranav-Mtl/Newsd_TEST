@@ -1,0 +1,219 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.android.appslure.newsd.MapFragmentOne">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/textview"
+            android:layout_width="fill_parent"
+            android:background="#ff7e18"
+            android:layout_below="@id/toolbar"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select your state/s"
+                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="#ffffff"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="5.5"
+            android:background="#fff"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:paddingTop="5dp"
+                android:gravity="center_vertical"
+                android:layout_height="0dp">
+                <ImageButton
+                    android:id="@+id/jammu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/jammu"
+                    />
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_alignRight="@id/jammu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:singleLine="false"
+                    android:paddingLeft="5dp"
+                    android:layout_alignParentRight="true"
+
+                    android:text="Jammu &amp; Kashmir · Punjab · Himachal Pradesh "
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:id="@+id/second"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp">
+
+                <ImageButton
+                    android:id="@+id/haryana"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/haryanarahasthan"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_alignRight="@id/haryana"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Uttar Pradesh · Uttarakhand"
+
+                    android:textColor="#000000"
+                    android:paddingLeft="5dp"
+                    android:textSize="15dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:id="@+id/third"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                >
+
+                <ImageButton
+                    android:id="@+id/delhi"
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/delhincr"
+                    />
+                <TextView
+                    android:layout_alignRight="@id/delhi"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Delhi-NCR"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dp"
+                    android:textSize="15dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:id="@+id/four"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+
+                <ImageButton
+                    android:id="@+id/utterakhand"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/utterpradesh"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_alignRight="@id/utterakhand"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Haryana · Rajasthan"
+
+                    android:paddingLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:id="@+id/five"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+
+                <ImageButton
+                    android:id="@+id/gurjat"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/gujrat"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_alignRight="@id/gurjat"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+                    android:textColor="#000000"
+                   android:text="Gujarat"
+                    android:textSize="15dp"
+                    android:paddingLeft="5dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/swipe_first"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
