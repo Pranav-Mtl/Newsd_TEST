@@ -324,7 +324,6 @@ public class TimeLine extends ActionBarActivity {
         }
     }
 
-
     private class GetTimeLineLoaddata extends AsyncTask<String,String,String>
     {
         @Override

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.android.BE.CategoryBE;
@@ -157,13 +159,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
         mProgressDialog=new ProgressDialog(DemoViewFlipperActivity.this);
 
         mFlipView = (FlipView) findViewById(R.id.flip_view);
-        mAdapter = new FlipAdapter(this,mProgressDialog,DemoViewFlipperActivity.this);
-        mAdapter.setCallback(this);
-        mFlipView.setAdapter(mAdapter);
-        mFlipView.setOnFlipListener(this);
-        mFlipView.peakNext(true);
-        mFlipView.setOverFlipMode(OverFlipMode.RUBBER_BAND);
-        mFlipView.setEmptyView(findViewById(R.id.empty_view));
+
        // mFlipView.setOnOverFlipListener(this);
 
         tvTicker= (TextView) findViewById(R.id.ticker_text);
@@ -731,6 +727,13 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
         }; // Drawer Toggle Object Made
         drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
         mDrawerToggle.syncState();
+        if(Configuration.isInternetConnection(DemoViewFlipperActivity.this)) {
+            new GetFirstTimeNews().execute(regId);
+        }
+        else
+        {
+            getData();
+        }
 
         btn_contact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1428,4 +1431,123 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
             }
         }.execute(null, null, null);
     }
+
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+    }
+
+
+    private class GetFirstTimeNews extends AsyncTask<String,String,String>
+    {
+
+        @Override
+        protected void onPreExecute() {
+
+            mProgressDialog.show();
+            mProgressDialog.setMessage("Loading News");
+            mProgressDialog.setCancelable(false);
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            mAdapter = new FlipAdapter(DemoViewFlipperActivity.this,mProgressDialog,DemoViewFlipperActivity.this,objCategoryBL,dbOperation,params[0]);
+
+            return "";
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            try {
+                mAdapter.setCallback(DemoViewFlipperActivity.this);
+                mFlipView.setAdapter(mAdapter);
+                mFlipView.setOnFlipListener(DemoViewFlipperActivity.this);
+                mFlipView.peakNext(true);
+                mFlipView.setOverFlipMode(OverFlipMode.RUBBER_BAND);
+                mFlipView.setEmptyView(findViewById(R.id.empty_view));
+
+                Toast.makeText(DemoViewFlipperActivity.this,"News updated..",Toast.LENGTH_LONG).show();
+            }
+            catch (NullPointerException e){
+                e.printStackTrace();
+            }
+            finally {
+                mProgressDialog.dismiss();
+            }
+
+
+
+        }
+    }
+
+    void getData() {
+        Cursor cursor = dbOperation.getDataFromTable();
+        System.out.println("CURSOR COUNT"+cursor.getCount());
+
+        Constant.newsSize=cursor.getCount();
+
+        Constant.title=new String[cursor.getCount()];
+        Constant.content=new String[cursor.getCount()];
+        Constant.publisher=new String[cursor.getCount()];
+        Constant.date=new String[cursor.getCount()];
+        Constant.imageURL=new String[cursor.getCount()];
+        Constant.newsURL=new String[cursor.getCount()];
+        Constant.newsID=new String[cursor.getCount()];
+        Constant.tag=new String[cursor.getCount()];
+        Constant.followStatus=new int[cursor.getCount()];
+        Constant.bookmarkStatus=new int[cursor.getCount()];
+
+        int i=0;
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            do {
+               /* ChatPeopleBE people = addToChat(cursor.getString(0),
+                        cursor.getString(1), cursor.getString(2),cursor.getString(3),cursor.getString(4), cursor.getString(5),cursor.getString(6), cursor.getString(7),cursor.getString(8));*/
+                //ChatPeoples.add(people);
+
+                Constant.title[i] =cursor.getString(1);
+                Constant.content[i] =cursor.getString(2);
+                Constant.publisher[i] = cursor.getString(5);
+                // Constant.date[i] = jsonObjected.get("date").toString();
+                Constant.imageURL[i] = cursor.getString(3);
+                Constant.newsID[i] = cursor.getString(0);
+                Constant.newsURL[i] = cursor.getString(4);
+                Constant.tag[i] =cursor.getString(6);
+
+
+                i++;
+
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        mAdapter = new FlipAdapter(DemoViewFlipperActivity.this,mProgressDialog,DemoViewFlipperActivity.this);
+        mAdapter.setCallback(DemoViewFlipperActivity.this);
+        mFlipView.setAdapter(mAdapter);
+        mFlipView.setOnFlipListener(DemoViewFlipperActivity.this);
+        mFlipView.peakNext(true);
+        mFlipView.setOverFlipMode(OverFlipMode.RUBBER_BAND);
+        mFlipView.setEmptyView(findViewById(R.id.empty_view));
+    }
+
 }

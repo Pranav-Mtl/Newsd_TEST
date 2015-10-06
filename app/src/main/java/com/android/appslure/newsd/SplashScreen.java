@@ -2,14 +2,12 @@ package com.android.appslure.newsd;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 import com.android.BL.CategoryBL;
@@ -30,13 +28,12 @@ import java.io.IOException;
 
 public class SplashScreen extends AppCompatActivity {
 
-    int SPLASH_TIME = 4000;
+    int SPLASH_TIME = 1000;
 
-   CategoryBL objCategoryBL;
+    CategoryBL objCategoryBL;
     ProgressDialog mProgressDialog;
 
     String deviceID,regId;
-
     GoogleCloudMessaging gcmObj;
 
     String savedRegID;
@@ -114,12 +111,12 @@ public class SplashScreen extends AppCompatActivity {
 
 
 
-        TranslateAnimation animation = new TranslateAnimation(1000.0f, 0.0f,0.0f, 0.0f);//  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
+       /* TranslateAnimation animation = new TranslateAnimation(1000.0f, 0.0f,0.0f, 0.0f);//  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
         animation.setDuration(1500);  // animation duration
         animation.setRepeatCount(0);  // animation repeat count
         animation.setRepeatMode(1);   // repeat animation (left to right, right to left )
         animation.setFillAfter(true);
-        img.startAnimation(animation);
+        img.startAnimation(animation);*/
 
         try {
             deviceID= Configuration.getSharedPrefrenceValue(SplashScreen.this, Constant.SHARED_PREFERENCE_ANDROID_ID);
@@ -152,14 +149,14 @@ public class SplashScreen extends AppCompatActivity {
                    try {
 
                        if(Configuration.isInternetConnection(SplashScreen.this)) {
-                           String result = new InsertSelectedCategory().execute(deviceID, "0",savedRegID).get();
+                         //  String result = new InsertSelectedCategory().execute(deviceID, "0",savedRegID).get();
                            Intent intent = new Intent(SplashScreen.this, DemoViewFlipperActivity.class);
                            //intent.putExtra("DBOperation",dbOperation);
                            startActivity(intent);
                        }
                        else
                        {
-                           getData();
+                          // getData();
                            Intent intent = new Intent(SplashScreen.this, DemoViewFlipperActivity.class);
                            startActivity(intent);
                        }
@@ -264,50 +261,6 @@ public class SplashScreen extends AppCompatActivity {
         }.execute(null, null, null);
     }
 
-    void getData() {
-        Cursor cursor = dbOperation.getDataFromTable();
-        System.out.println("CURSOR COUNT"+cursor.getCount());
-
-        Constant.newsSize=cursor.getCount();
-
-        Constant.title=new String[cursor.getCount()];
-        Constant.content=new String[cursor.getCount()];
-        Constant.publisher=new String[cursor.getCount()];
-        Constant.date=new String[cursor.getCount()];
-        Constant.imageURL=new String[cursor.getCount()];
-        Constant.newsURL=new String[cursor.getCount()];
-        Constant.newsID=new String[cursor.getCount()];
-        Constant.tag=new String[cursor.getCount()];
-        Constant.followStatus=new int[cursor.getCount()];
-        Constant.bookmarkStatus=new int[cursor.getCount()];
-
-        int i=0;
-
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            do {
-               /* ChatPeopleBE people = addToChat(cursor.getString(0),
-                        cursor.getString(1), cursor.getString(2),cursor.getString(3),cursor.getString(4), cursor.getString(5),cursor.getString(6), cursor.getString(7),cursor.getString(8));*/
-                //ChatPeoples.add(people);
-
-                Constant.title[i] =cursor.getString(1);
-                Constant.content[i] =cursor.getString(2);
-                Constant.publisher[i] = cursor.getString(5);
-                // Constant.date[i] = jsonObjected.get("date").toString();
-                Constant.imageURL[i] = cursor.getString(3);
-                Constant.newsID[i] = cursor.getString(0);
-                Constant.newsURL[i] = cursor.getString(4);
-                Constant.tag[i] =cursor.getString(6);
-
-
-                i++;
-
-
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-
-    }
 
     ChatPeopleBE addToChat(String newsdID, String newsdTitle, String newsdContent,String newsdTag,String newsdPublisher,String newsdImage,String newsdLink,String newsdFollow,String newsdBookmarked) {
 

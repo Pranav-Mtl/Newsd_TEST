@@ -400,7 +400,7 @@ public class MyAccount extends AppCompatActivity {
         tvHIW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HowItWork.class));
+                startActivity(new Intent(getApplicationContext(), BookMarkList.class));
             }
         });
 

@@ -29,7 +29,9 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_centerVertical="true"
-                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/contact" />
 
                 <ImageView
@@ -52,14 +54,16 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_centerVertical="true"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/audio" />
 
                 <ImageView
                     android:id="@+id/audio_tab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
+                    android:layout_marginLeft="2dp"
                     android:background="@drawable/header_tab_img"
                     android:visibility="invisible" />
             </LinearLayout>
@@ -68,6 +72,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <Button
@@ -76,6 +81,7 @@
                     android:layout_height="24dp"
                     android:layout_centerVertical="true"
                     android:layout_margin="10dp"
+                    android:visibility="gone"
                     android:background="@drawable/bookmark_small" />
 
                 <ImageView
@@ -84,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="0dp"
                     android:background="@drawable/header_tab_img"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -92,14 +98,15 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 android:orientation="vertical">
-
 
                 <Button
                     android:id="@+id/btn_search"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_margin="10dp"
+                    android:visibility="gone"
                     android:background="@drawable/search" />
 
                 <ImageView
@@ -108,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:background="@drawable/header_tab_img"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
             </LinearLayout>
 
         </LinearLayout>

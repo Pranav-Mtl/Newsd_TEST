@@ -24,8 +24,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.BL.CategoryBL;
 import com.android.CONSTANTS.Constant;
 import com.android.Configuration.Configuration;
+import com.android.DB.DBOperation;
 import com.loopj.android.image.SmartImageView;
 import com.squareup.picasso.Picasso;
 
@@ -96,8 +98,24 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
     public Callback callback;
     private List<Item> items = new ArrayList<Item>();
 
-    public FlipAdapter(Context context,ProgressDialog pd,Activity act) {
+    public FlipAdapter(Context context,ProgressDialog pd,Activity act,CategoryBL objCategoryBL,DBOperation dbOperation,String regID) {
         System.out.println("New Item Added (Constuctor)---->" + new Item());
+        this.context = context;
+        activity =act;
+        progressDialog=pd;
+        deviceID= Configuration.getSharedPrefrenceValue(context,Constant.SHARED_PREFERENCE_ANDROID_ID);
+        inflater = LayoutInflater.from(context);
+
+        objCategoryBL.getCategoryData(deviceID,"0",dbOperation,regID);
+
+        for (int i = 0; i < Constant.newsSize; i++) {
+            System.out.println("New Item Added (Constuctor)---->" + new Item());
+            items.add(new Item());
+        }
+        System.out.println("ID" + Item.id);
+    }
+
+    public FlipAdapter(Context context,ProgressDialog pd,Activity act){
         this.context = context;
         activity =act;
         progressDialog=pd;
@@ -108,6 +126,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
             items.add(new Item());
         }
         System.out.println("ID" + Item.id);
+
     }
 
     public FlipAdapter(Context context,int size) {
@@ -605,7 +624,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
         i.setAction(Intent.ACTION_SEND);
         i.setType("image/*");
         i.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(path)));
-        i.putExtra(Intent.EXTRA_TEXT, textLink+"\n"+"-via newsd"+"\n"+"http://www.newsd.in/app");
+        i.putExtra(Intent.EXTRA_TEXT, textLink+"\n"+"#GetNewsd"+"\n"+"www.newsd.in/app");
 
         activity.startActivity(i);
     }

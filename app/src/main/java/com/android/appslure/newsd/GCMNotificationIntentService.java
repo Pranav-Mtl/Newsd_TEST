@@ -13,8 +13,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 
-import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.android.CONSTANTS.Constant;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONObject;
 
@@ -98,10 +98,10 @@ public class GCMNotificationIntentService extends IntentService {
         }
         Intent resultIntent = new Intent(this, NotificationNews.class);
         resultIntent.putExtra("NEWSID", id);
-        resultIntent.setAction(Intent.ACTION_MAIN);
-        resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+       /* resultIntent.setAction(Intent.ACTION_MAIN);
+        resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);*/
         PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0,
-                resultIntent, PendingIntent.FLAG_ONE_SHOT);
+                resultIntent,PendingIntent.FLAG_CANCEL_CURRENT);
 
         NotificationCompat.Builder mNotifyBuilder;
         NotificationManager mNotificationManager;
@@ -131,6 +131,7 @@ public class GCMNotificationIntentService extends IntentService {
         // Post a notification
         mNotificationManager.notify(notifyID, mNotifyBuilder.build());
     }
+
 
 }
 

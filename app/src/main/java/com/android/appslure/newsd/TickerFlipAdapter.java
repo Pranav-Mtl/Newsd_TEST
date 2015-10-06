@@ -482,8 +482,7 @@ public class TickerFlipAdapter extends BaseAdapter implements View.OnClickListen
         i.setAction(Intent.ACTION_SEND);
         i.setType("image/*");
         i.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(path)));
-        i.putExtra(Intent.EXTRA_TEXT, textLink+"\n"+"-via newsd"+"\n"+"http://www.newsd.in/app");
-
+        i.putExtra(Intent.EXTRA_TEXT, textLink+"\n"+"#GetNewsd"+"\n"+"www.newsd.in/app");
         activity.startActivity(i);
     }
 }

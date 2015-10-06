@@ -117,8 +117,9 @@ public class NotificationNews extends AppCompatActivity {
 
         String newsId=getIntent().getExtras().get("NEWSID").toString();
 
+        final String regId=Configuration.getSharedPrefrenceValue(NotificationNews.this, Constant.SHARED_PREFERENCE_UpdateRegistrationID);
         try {
-            new GetNews().execute(newsId);
+            new InsertSelectedCategory().execute(deviceID, "0", regId);
         }
         catch (Exception e)
         {
@@ -185,7 +186,7 @@ public class NotificationNews extends AppCompatActivity {
             }
         });
 
-        final String regId=Configuration.getSharedPrefrenceValue(NotificationNews.this,Constant.SHARED_PREFERENCE_UpdateRegistrationID);
+
 
         View logoView = getToolbarLogoView(toolbar);
 
@@ -452,7 +453,7 @@ public class NotificationNews extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             mProgressDialog.show();
-            mProgressDialog.setMessage("Refreshing...");
+            mProgressDialog.setMessage("Loading news...");
             mProgressDialog.setCancelable(false);
         }
 
