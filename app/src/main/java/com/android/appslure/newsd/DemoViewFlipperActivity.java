@@ -17,6 +17,12 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -81,7 +87,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
     DBOperation dbOperation;
 
 
-    Button btn_contact, btn_audio, btn_bookmark, btn_search;
+    Button btn_contact, btn_audio, btn_bookmark, btn_search,btnRefresh;
     ImageView contact_tab, audio_tab, bookmark_tab, search_tab;
     ImageButton img_btn_add_post_bookmark, img_btn_post_setting, img_btn_post_share;
     TextView post_heading, post_text, ticker_text, post_publisher;
@@ -212,6 +218,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
         btn_audio = (Button) findViewById(R.id.btn_audio);
         btn_bookmark = (Button) findViewById(R.id.btn_bookmark);
         btn_search = (Button) findViewById(R.id.btn_search);
+        btnRefresh= (Button) findViewById(R.id.btn_refresh);
 
         contact_tab = (ImageView) findViewById(R.id.contact_tab);
         audio_tab = (ImageView) findViewById(R.id.audio_tab);
@@ -263,7 +270,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
 
 
-        leftList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_raw, leftListStrings));
+        leftList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_raw, Constant.leftDrawer));
 
 
         rightList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -779,6 +786,32 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     alertDialog2.show();
 
                 }
+            }
+        });
+
+
+        btnRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*RotateAnimation ra =new RotateAnimation(0, 360);
+                ra.setFillAfter(true);
+                ra.setDuration(1000);
+                btnRefresh.startAnimation(ra);
+*/
+
+                btnRefresh.startAnimation(
+                        AnimationUtils.loadAnimation(DemoViewFlipperActivity.this, R.anim.btn_refresh));
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(DemoViewFlipperActivity.this, DemoViewFlipperActivity.class);
+                        //intent.putExtra("DBOperation",dbOperation);
+                        startActivity(intent);
+                        finish();
+                    }
+                },500);
+
 
 
             }
@@ -797,7 +830,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     search_tab.setVisibility(View.INVISIBLE);
                 }
                 if (Configuration.isInternetConnection(DemoViewFlipperActivity.this)) {
-                    startActivity(new Intent(getApplicationContext(), EventNews.class));
+                    startActivity(new Intent(getApplicationContext(),EventNews.class));
                 }
                 else
                 {
@@ -939,7 +972,10 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                 //logo clicked
                 try {
                     if(Configuration.isInternetConnection(DemoViewFlipperActivity.this)) {
-                        new InsertSelectedCategory().execute(deviceID, "0",regId);
+                        Intent intent = new Intent(DemoViewFlipperActivity.this, DemoViewFlipperActivity.class);
+                        //intent.putExtra("DBOperation",dbOperation);
+                        startActivity(intent);
+                        finish();
                     }
                     else
                     {
@@ -1550,4 +1586,25 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
         mFlipView.setEmptyView(findViewById(R.id.empty_view));
     }
 
+    public void startAnimation(Button ivDH)
+    {
+        System.out.println("Inside startAnimation()");
+        Animation scaleAnim = new ScaleAnimation(0, 2, 0, 2);
+        scaleAnim.setDuration(5000);
+        scaleAnim.setRepeatCount(1);
+        scaleAnim.setInterpolator(new AccelerateInterpolator());
+        scaleAnim.setRepeatMode(Animation.REVERSE);
+
+        Animation rotateAnim = new RotateAnimation(0, 360, Animation.ABSOLUTE, Animation.ABSOLUTE, Animation.ABSOLUTE, Animation.RELATIVE_TO_SELF);
+        rotateAnim.setDuration(5000);
+        rotateAnim.setRepeatCount(1);
+        rotateAnim.setInterpolator(new AccelerateInterpolator());
+        rotateAnim.setRepeatMode(Animation.REVERSE);
+
+        AnimationSet animationSet = new AnimationSet(true);
+        animationSet.addAnimation(scaleAnim);
+        animationSet.addAnimation(rotateAnim);
+
+        ivDH.startAnimation(animationSet);
+    }
 }

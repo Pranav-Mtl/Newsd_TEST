@@ -61,18 +61,18 @@
     <string-array name="left">
         <item name="0">&#160;&#160;&#160;CATEGORIES</item>
         <item name="1">INDIA</item>
-        <item name="2">WORLD</item>
-        <item name="3">TRENDING</item>
-        <item name="4">HUMOUR &amp; RUMOUR</item>
-        <item name="5">BEYOND METROS > </item>
-        <item name="6">ECONOMY</item>
-        <item name="7">BUSINESS</item>
-        <item name="8">TECH+</item>
-        <item name="9">SPORTS</item>
-        <item name="10">ENTERTAINMENT</item>
-        <item name="11">PEOPLE</item>
-        <item name="12">LIFESTYLE</item>
-        <item name="13">SPECIALS</item>
+        <item name="2">&#7984;WORLD</item>
+        <item name="3">&#8419;TRENDING</item>
+        <item name="4">&#127917;HUMOUR &amp; RUMOUR</item>
+        <item name="5">&#128668;BEYOND METROS > </item>
+        <item name="6"> ECONOMY</item>
+        <item name="7">&#128176;BUSINESS</item>
+        <item name="8">&#128225;TECH+</item>
+        <item name="9">&#9917;SPORTS</item>
+        <item name="10">&#127916;ENTERTAINMENT</item>
+        <item name="11">&#128104;PEOPLE</item>
+        <item name="12">&#127939;LIFESTYLE</item>
+        <item name="13">&#128240;SPECIALS</item>
 
 
     </string-array>

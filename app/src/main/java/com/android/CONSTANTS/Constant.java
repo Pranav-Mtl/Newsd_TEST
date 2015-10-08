@@ -248,5 +248,22 @@ public class Constant {
     public static int tickerFollowStatus[];
     public static int tickerBookmarkStatus[];
 
+    public static String leftDrawer[]={"CATEGORIES","INDIA","\uD83C\uDF0F  WORLD","\u20E3 TRENDING","\uD83C\uDFAD HUMOUR & RUMOUR","\uD83D\uDE9C BEYOND METROS >","\uD83D\uDCC8 ECONOMY","\uD83D\uDCB0 BUSINESS","\uD83D\uDCE1 TECH+","\u26BD SPORTS","\uD83C\uDFAC ENTERTAINMENT","\uD83D\uDC68 PEOPLE","\uD83C\uDFC3 LIFESTYLE","\uD83D\uDCF0 SPECIALS"};
 
+    /*
+    *  <item name="0">&#160;&#160;&#160;CATEGORIES</item>
+        <item name="1">INDIA</item>
+        <item name="2">&#7984;WORLD</item>
+        <item name="3">&#8419;TRENDING</item>
+        <item name="4">&#127917;HUMOUR &amp; RUMOUR</item>
+        <item name="5">&#128668;BEYOND METROS > </item>
+        <item name="6"> ECONOMY</item>
+        <item name="7">&#128176;BUSINESS</item>
+        <item name="8">&#128225;TECH+</item>
+        <item name="9">&#9917;SPORTS</item>
+        <item name="10">&#127916;ENTERTAINMENT</item>
+        <item name="11">&#128104;PEOPLE</item>
+        <item name="12">&#127939;LIFESTYLE</item>
+        <item name="13">&#128240;SPECIALS</item>
+    * */
 }
