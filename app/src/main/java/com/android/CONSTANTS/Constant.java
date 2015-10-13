@@ -6,6 +6,7 @@ import com.android.appslure.newsd.R;
 /**
  * Created by appslure on 6/20/2015.
  */
+
 public class Constant {
 
     public static  String PREFS_NAME = "MyPrefsFile";
@@ -18,6 +19,9 @@ public class Constant {
 
     public static String SHARED_PREFERENCE_Swipe_Story_Two="StoryTwo";
 
+    public static String SHARED_PREFERENCE_NOTIFICATION="notification";
+
+    public static String SHARED_PREFERENCE_RUN_CACHE="cache";
     public static String CampaignLadoo="ladooo";
 
 
@@ -36,6 +40,7 @@ public class Constant {
     public static String newsURL[];
     public static String newsID[];
     public static String tag[];
+    public static String video[];
     public static int followStatus[];
     public static int bookmarkStatus[];
 
@@ -216,6 +221,7 @@ public class Constant {
     public static String categoryNewsURL[];
     public static String categoryNewsID[];
     public static String categoryTag[];
+    public static String categoryVideo[];
     public static int categoryFollowStatus[];
     public static int categoryBookmarkStatus[];
 
@@ -245,10 +251,15 @@ public class Constant {
     public static String tickerNewsURL[];
     public static String tickerNewsID[];
     public static String tickerTag[];
+    public static String tickerVideo[];
     public static int tickerFollowStatus[];
     public static int tickerBookmarkStatus[];
+//    public static String leftDrawer[]={"   CATEGORIES","INDIA","WORLD","HUMOUR & RUMOUR","BEYOND METROS >","ECONOMY","BUSINESS","TECH+","SPORTS","ENTERTAINMENT","PEOPLE","LIFESTYLE","SPECIALS ","SETTINGS"};
 
-    public static String leftDrawer[]={"CATEGORIES","INDIA","\uD83C\uDF0F  WORLD","\u20E3 TRENDING","\uD83C\uDFAD HUMOUR & RUMOUR","\uD83D\uDE9C BEYOND METROS >","\uD83D\uDCC8 ECONOMY","\uD83D\uDCB0 BUSINESS","\uD83D\uDCE1 TECH+","\u26BD SPORTS","\uD83C\uDFAC ENTERTAINMENT","\uD83D\uDC68 PEOPLE","\uD83C\uDFC3 LIFESTYLE","\uD83D\uDCF0 SPECIALS"};
+    // public static String leftDrawer[]={"CATEGORIES","INDIA","\uD83C\uDF0F  WORLD","\u20E3 TRENDING","\uD83C\uDFAD HUMOUR & RUMOUR","\uD83D\uDE9C BEYOND METROS >","\uD83D\uDCC8 ECONOMY","\uD83D\uDCB0 BUSINESS","\uD83D\uDCE1 TECH+","\u26BD SPORTS","\uD83C\uDFAC ENTERTAINMENT","\uD83D\uDC68 PEOPLE","\uD83C\uDFC3 LIFESTYLE","\uD83D\uDCF0 SPECIALS"};
+
+    public static String leftDrawer[]={"   CATEGORIES","INDIA","WORLD","HUMOUR & RUMOUR","BEYOND METROS >","ECONOMY","BUSINESS","TECH+","SPORTS","ENTERTAINMENT","PEOPLE","LIFESTYLE","SPECIALS ","SETTINGS"};
+    public static int leftDrawerImg[]={1,R.drawable.ic_side_india,R.drawable.ic_side_world,R.drawable.ic_side_hr,R.drawable.ic_side_bm,R.drawable.ic_side_economy,R.drawable.ic_side_buzz,R.drawable.ic_side_technology,R.drawable.ic_side_sports,R.drawable.ic_side_entertainment,R.drawable.ic_side_people,R.drawable.ic_side_lifestyle,R.drawable.ic_side_special,R.drawable.ic_setting};
 
     /*
     *  <item name="0">&#160;&#160;&#160;CATEGORIES</item>

@@ -28,13 +28,15 @@
                     android:scaleType="centerCrop"
                      />
 
+
                 <ImageButton
+                    android:id="@+id/news_video"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
                     android:layout_margin="10dp"
                     android:visibility="gone"
-                    android:background="@drawable/fashion_icon" />
+                    android:background="@drawable/ic_btn_video" />
 
 
 
@@ -97,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginRight="20dp"
                     android:gravity="center_horizontal"
                     android:visibility="gone"
 
@@ -278,6 +280,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/upper_hand"
                         android:layout_centerInParent="true"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="20dp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -335,7 +339,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tap to Open Breaking News"
+                        android:text="Tap to Open Top Stories"
                         android:textColor="#fff"
                         android:textSize="15sp"
                         android:padding="5dp"

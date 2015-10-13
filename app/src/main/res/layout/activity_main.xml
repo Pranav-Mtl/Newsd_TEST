@@ -114,6 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/cat_world"
                         android:layout_marginLeft="5dp"
+                        android:visibility="gone"
                         android:background="@drawable/cat_bg_trending" />
                 </RelativeLayout>
 

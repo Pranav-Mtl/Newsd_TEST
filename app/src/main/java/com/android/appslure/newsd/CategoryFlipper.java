@@ -25,6 +25,7 @@ import com.android.CONSTANTS.Constant;
 import com.android.Configuration.Configuration;
 import com.android.DB.ChatPeopleBE;
 import com.android.DB.DBOperation;
+import com.android.LeftDrawerAdapter;
 import com.android.appslure.newsd.CategoryFlipAdapter.Callback;
 import com.facebook.appevents.AppEventsConstants;
 import com.facebook.appevents.AppEventsLogger;
@@ -196,8 +197,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
 
         leftListStrings = getResources().getStringArray(R.array.left);
 
-        leftList.setAdapter(new ArrayAdapter<String>(this,R.layout.drawer_list_raw, leftListStrings));
-
+        leftList.setAdapter(new LeftDrawerAdapter(getApplicationContext()));
 
         rightList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -390,7 +390,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                     }
 
                 }
-                if (arg2 == 3) {
+               /* if (arg2 == 3) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -411,8 +411,8 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                         intent.putExtra("Category", clickedCategory);
                         startActivity(intent);
                     }
-                }
-                if (arg2 == 4) {
+                }*/
+                if (arg2 == 3) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -436,7 +436,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                     }
                 }
 
-                if (arg2 == 5) {
+                if (arg2 == 4) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -448,7 +448,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
 
                 }
 
-                if (arg2 == 6) {
+                if (arg2 == 5) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -473,7 +473,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
 
                 }
 
-                if (arg2 == 7) {
+                if (arg2 == 6) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -496,7 +496,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                     }
 
 
-                } if (arg2 == 8) {
+                } if (arg2 == 7) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -523,7 +523,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
 
                 ///////////
 
-                if (arg2 == 9) {
+                if (arg2 == 8) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -546,7 +546,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                     }
 
 
-                } if (arg2 == 10) {
+                } if (arg2 == 9) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -571,7 +571,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
 
                 }
 
-                if (arg2 == 11) {
+                if (arg2 == 10) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -597,7 +597,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
 
 
                 }
-                if (arg2 == 12) {
+                if (arg2 == 11) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -620,7 +620,7 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                     }
 
                 }
-                if (arg2 == 13) {
+                if (arg2 == 12) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -643,6 +643,14 @@ public class CategoryFlipper extends AppCompatActivity implements  Callback, Fli
                         startActivity(intent);
                     }
 
+
+
+
+                }
+
+                if (arg2 == 13) {
+
+                   startActivity(new Intent(getApplicationContext(),Setting.class));
 
 
 

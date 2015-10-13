@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 
 import com.android.CONSTANTS.Constant;
+import com.android.Configuration.Configuration;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONObject;
@@ -62,7 +63,13 @@ public class GCMNotificationIntentService extends IntentService {
                         String notification_type = jsonObj.getString("notification_type");
 
                         if(notification_type.equals("newsd")) {
-                            sendNotificationSeller(msgArray);
+                            String notCheck= Configuration.getSharedPrefrenceValue(this,Constant.SHARED_PREFERENCE_NOTIFICATION);
+                            if(notCheck==null) {
+                                sendNotificationSeller(msgArray);
+                            }
+                            else {
+
+                            }
                         }
 
 
@@ -96,8 +103,8 @@ public class GCMNotificationIntentService extends IntentService {
         {
             e.printStackTrace();
         }
-        Intent resultIntent = new Intent(this, NotificationNews.class);
-        resultIntent.putExtra("NEWSID", id);
+        Intent resultIntent = new Intent(this, DemoViewFlipperActivity.class);
+       // resultIntent.putExtra("NEWSID", id);
        /* resultIntent.setAction(Intent.ACTION_MAIN);
         resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);*/
         PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0,
@@ -131,7 +138,6 @@ public class GCMNotificationIntentService extends IntentService {
         // Post a notification
         mNotificationManager.notify(notifyID, mNotifyBuilder.build());
     }
-
 
 }
 

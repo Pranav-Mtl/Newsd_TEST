@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -41,6 +42,7 @@ import com.android.Configuration.AppRater;
 import com.android.Configuration.Configuration;
 import com.android.DB.ChatPeopleBE;
 import com.android.DB.DBOperation;
+import com.android.LeftDrawerAdapter;
 import com.android.appslure.newsd.FlipAdapter.Callback;
 import com.facebook.appevents.AppEventsLogger;
 import com.flurry.android.FlurryAgent;
@@ -61,6 +63,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -230,6 +233,8 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
         img_btn_post_setting = (ImageButton) findViewById(R.id.img_btn_post_setting);
         img_btn_add_post_bookmark = (ImageButton) findViewById(R.id.img_btn_add_post_bookmark);
 
+        btnRefresh.setVisibility(View.VISIBLE);
+
         Bundle bundle = getIntent().getExtras();
         //CategoryBE obj = bundle.getParcelable("CategoryBE_OBJ");
 
@@ -251,6 +256,35 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
             e.printStackTrace();
         }
 
+        try {
+            long minStartTime = System.currentTimeMillis() - 1000*60*60*72;
+            //Toast.makeText(getApplicationContext(),minStartTime+"",Toast.LENGTH_SHORT).show();
+
+            String lastRun=Configuration.getSharedPrefrenceValue(DemoViewFlipperActivity.this, Constant.SHARED_PREFERENCE_RUN_CACHE);
+
+
+            if(lastRun==null){
+                Configuration.setSharedPrefrenceValue(DemoViewFlipperActivity.this, Constant.PREFS_NAME, Constant.SHARED_PREFERENCE_RUN_CACHE, System.currentTimeMillis() + "");
+            }
+            else {
+                long lastTimeRan = Long.valueOf(lastRun);
+                if (lastTimeRan >= minStartTime) {
+
+                    // a day passed. do whatever...
+                    //also save the new 'lastTimeRan' in prefs
+                    // prefs.edit().putLong("lastTimeRan", System.currentTimeMillis()).commit();
+                    clearApplicationData();
+                    Configuration.setSharedPrefrenceValue(DemoViewFlipperActivity.this, Constant.PREFS_NAME, Constant.SHARED_PREFERENCE_RUN_CACHE, lastTimeRan+ "");
+                }
+            }
+        }
+        catch (NullPointerException e){
+
+        }
+        catch (Exception e){
+
+        }
+
         //dbOperation= (DBOperation) getIntent().getSerializableExtra("DBOperation");
 
 
@@ -268,10 +302,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
         leftListStrings = getResources().getStringArray(R.array.left);
 
-
-
-        leftList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_raw, Constant.leftDrawer));
-
+        leftList.setAdapter(new LeftDrawerAdapter(getApplicationContext()));
 
         rightList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -454,7 +485,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     }
 
                 }
-                if (arg2 == 3) {
+               /* if (arg2 == 3) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -475,8 +506,8 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                         intent.putExtra("Category", clickedCategory);
                         startActivity(intent);
                     }
-                }
-                if (arg2 == 4) {
+                }*/
+                if (arg2 == 3) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -489,7 +520,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                         dbOperation.open();
                         dbOperation.delete(objChatPeopleBE.getTABLE_Humour());
                         dbOperation.close();
-                    new GetCategoryCategory().execute(clickedCategory,Constant.Categorypage_no+"");
+                    new GetCategoryCategory().execute(clickedCategory, Constant.Categorypage_no + "");
                     }
                     else
                     {
@@ -500,7 +531,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     }
                 }
 
-                if (arg2 == 5) {
+                if (arg2 == 4) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -512,7 +543,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
                 }
 
-                if (arg2 == 6) {
+                if (arg2 == 5) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -537,7 +568,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
                 }
 
-                if (arg2 == 7) {
+                if (arg2 == 6) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -560,7 +591,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     }
 
 
-                } if (arg2 == 8) {
+                } if (arg2 == 7) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -587,7 +618,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
                 ///////////
 
-                if (arg2 == 9) {
+                if (arg2 == 8) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -610,7 +641,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     }
 
 
-                } if (arg2 == 10) {
+                } if (arg2 == 9) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -635,7 +666,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
                 }
 
-                if (arg2 == 11) {
+                if (arg2 == 10) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -648,7 +679,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                         dbOperation.open();
                         dbOperation.delete(objChatPeopleBE.getTABLE_People());
                         dbOperation.close();
-                        startActivity(new Intent(DemoViewFlipperActivity.this,PeopleList.class));
+                        startActivity(new Intent(DemoViewFlipperActivity.this, PeopleList.class));
                     }
                     else
                     {
@@ -662,7 +693,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
 
                 }
-                if (arg2 == 12) {
+                if (arg2 == 11) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -685,7 +716,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     }
 
                 }
-                if (arg2 == 13) {
+                if (arg2 == 12) {
 
                     if(rightList.isShown()) {
                         rightList.setVisibility(View.GONE);
@@ -710,6 +741,13 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
 
                 }
+
+                if (arg2 == 13) {
+
+                   startActivity(new Intent(getApplicationContext(),Setting.class));
+
+                }
+
             }
 
         });
@@ -798,7 +836,6 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                 ra.setDuration(1000);
                 btnRefresh.startAnimation(ra);
 */
-
                 btnRefresh.startAnimation(
                         AnimationUtils.loadAnimation(DemoViewFlipperActivity.this, R.anim.btn_refresh));
 
@@ -810,9 +847,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                         startActivity(intent);
                         finish();
                     }
-                },500);
-
-
+                },400);
 
             }
         });
@@ -970,7 +1005,10 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
             @Override
             public void onClick(View v) {
                 //logo clicked
-                try {
+                try{
+
+                mAdapter.callback.onPageRequested(0);
+               /* try {
                     if(Configuration.isInternetConnection(DemoViewFlipperActivity.this)) {
                         Intent intent = new Intent(DemoViewFlipperActivity.this, DemoViewFlipperActivity.class);
                         //intent.putExtra("DBOperation",dbOperation);
@@ -979,9 +1017,9 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                     }
                     else
                     {
-                        mAdapter.callback.onPageRequested(0);
-                    }
 
+                    }
+*/
                 }
                 catch (Exception e)
                 {
@@ -1252,6 +1290,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
             Constant.tickerNewsID=new String[jsonArray.size()];
             Constant.tickerNewsURL=new String[jsonArray.size()];
             Constant.tickerTag=new String[jsonArray.size()];
+            Constant.tickerVideo=new String[jsonArray.size()];
             Constant.tickerPublisher=new String[jsonArray.size()];
 
 
@@ -1264,6 +1303,7 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
                 Constant.tickerNewsID[i]=jsonObjected.get("id").toString();
                 Constant.tickerNewsURL[i]=jsonObjected.get("link").toString();
                 Constant.tickerTag[i]=jsonObjected.get("tag").toString();
+                Constant.tickerVideo[i]=jsonObjected.get("video").toString();
                 Constant.tickerPublisher[i]=jsonObjected.get("publisher").toString();
 
                     if(i==0) {
@@ -1278,7 +1318,9 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
             }
 
-            tvTicker.setText(Constant.tickerTitle);
+            Log.d("Ticket title",Constant.tickerTitle);
+
+           tvTicker.setText(Constant.tickerTitle);
 
 
             //  System.out.println("Content--->" +jsonObjected.get("content").toString());
@@ -1607,4 +1649,69 @@ public class DemoViewFlipperActivity extends AppCompatActivity implements Callba
 
         ivDH.startAnimation(animationSet);
     }
+
+  /*  @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        return true;
+    }
+*/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+
+            //clearApplicationData();
+
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void clearApplicationData()
+    {
+        File cache = getCacheDir();
+        File appDir = new File(cache.getParent());
+        if (appDir.exists()) {
+            String[] children = appDir.list();
+            for (String s : children) {
+                Log.d("S-->", s);
+                //Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+                if (!(s.equals("lib") || s.equals("shared_prefs")) ) {
+                   // Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+                    deleteDir(new File(appDir, s));
+                    Log.i("TAG", "**************** File /data/data/APP_PACKAGE=/" + s + " DELETED *******************");
+                }
+
+            }
+
+            Toast.makeText(DemoViewFlipperActivity.this,"Cache data cleared from your device.",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public static boolean deleteDir(File dir)
+    {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
+    }
+
 }

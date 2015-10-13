@@ -136,6 +136,7 @@ public class DrawerCategoryBL {
             Constant.categoryNewsID=createNewArray(Constant.categoryNewsID,jsonArray.size());
             Constant.categoryNewsURL=createNewArray(Constant.categoryNewsURL, jsonArray.size());
             Constant.categoryTag=createNewArray(Constant.categoryTag, jsonArray.size());
+            Constant.categoryVideo=createNewArray(Constant.categoryVideo, jsonArray.size());
             Constant.categoryFollowStatus=createNewIntegerArray(Constant.categoryFollowStatus, jsonArray.size());
             Constant.categoryBookmarkStatus=createNewIntegerArray(Constant.categoryBookmarkStatus,jsonArray.size());
             // Constant.bookmarkStatus=new int[Constant.newsSize];
@@ -154,6 +155,7 @@ public class DrawerCategoryBL {
                 Constant.categoryNewsID[Constant.categoryLast+i]=jsonObjected.get("news_id").toString();
                 Constant.categoryNewsURL[Constant.categoryLast+i]=jsonObjected.get("main_news").toString();
                 Constant.categoryTag[Constant.categoryLast+i]=jsonObjected.get("tag").toString();
+                Constant.categoryVideo[Constant.categoryLast+i]=jsonObjected.get("video").toString();
                 Constant.categoryFollowStatus[Constant.categoryLast+i]=Integer.valueOf(jsonObjected.get("follow_status").toString());
                 Constant.categoryBookmarkStatus[Constant.categoryLast+i]=Integer.valueOf(jsonObjected.get("bookmark_status").toString());
                 ChatPeopleBE curChatObj = addToChat(jsonObjected.get("news_id").toString(), jsonObjected.get("title").toString(),jsonObjected.get("content").toString(),jsonObjected.get("tag").toString(),jsonObjected.get("source").toString(),jsonObjected.get("image").toString(),jsonObjected.get("main_news").toString(),jsonObjected.get("follow_status").toString(),jsonObjected.get("bookmark_status").toString());
@@ -195,6 +197,7 @@ public class DrawerCategoryBL {
             Constant.categoryNewsURL=new String[Constant.categoryNewsSize];
             Constant.categoryNewsID=new String[Constant.categoryNewsSize];
             Constant.categoryTag=new String[Constant.categoryNewsSize];
+            Constant.categoryVideo=new String[Constant.categoryNewsSize];
             Constant.categoryFollowStatus=new int[Constant.categoryNewsSize];
             Constant.categoryBookmarkStatus=new int[Constant.categoryNewsSize];
 
@@ -211,6 +214,7 @@ public class DrawerCategoryBL {
                 Constant.categoryNewsID[i]=jsonObjected.get("news_id").toString();
                 Constant.categoryNewsURL[i]=jsonObjected.get("main_news").toString();
                 Constant.categoryTag[i]=jsonObjected.get("tag").toString();
+                Constant.categoryVideo[i]=jsonObjected.get("video").toString();
                 Constant.categoryFollowStatus[i]=Integer.valueOf(jsonObjected.get("follow_status").toString());
                 Constant.categoryBookmarkStatus[i]=Integer.valueOf(jsonObjected.get("bookmark_status").toString());
 

@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.android.appslure.newsd.Setting">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000"
+        android:minHeight="?attr/actionBarSize">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="end|center_vertical"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:paddingRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="60dp"
+
+        >
+        <ImageView
+            android:id="@+id/not_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_notification"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:layout_marginLeft="50dp"
+            android:textSize="18sp"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000"
+
+            />
+    <ToggleButton
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:background="@drawable/setting_toggle"
+        android:id="@+id/toggleButton"
+        android:layout_alignParentRight="true"
+        android:checked="true"
+        android:textOff=""
+        android:textOn=""
+        />
+    </RelativeLayout>
+</RelativeLayout>

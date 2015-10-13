@@ -152,7 +152,7 @@ public class CategoryFlipAdapter extends BaseAdapter implements View.OnClickList
             holder.news_img= (SmartImageView)convertView.findViewById(R.id.news_img);
             holder.btnText = (TextView) convertView.findViewById(R.id.post_heading);
             holder.post_text = (TextView) convertView.findViewById(R.id.post_text);
-
+            holder.img_video= (ImageButton) convertView.findViewById(R.id.news_video);
             holder.img_bookmark= (ImageButton) convertView.findViewById(R.id.img_btn_add_post_bookmark);
             holder.img_pugMark= (ImageButton) convertView.findViewById(R.id.img_btn_post_setting);
             holder.img_share= (ImageButton) convertView.findViewById(R.id.img_btn_post_share);
@@ -215,6 +215,13 @@ public class CategoryFlipAdapter extends BaseAdapter implements View.OnClickList
             holder.img_pugMark.setBackgroundResource(R.drawable.post_setting_img);
         }
 
+        if(Constant.categoryVideo[position].equals("1")){
+            holder.img_video.setVisibility(View.VISIBLE);
+        }
+        else {
+            holder.img_video.setVisibility(View.GONE);
+        }
+
        /* if(mHighlightedPositions[position]) {
             holder.img_share.setBackgroundResource(R.drawable.post_share_img);
         }else {
@@ -223,6 +230,8 @@ public class CategoryFlipAdapter extends BaseAdapter implements View.OnClickList
 
         //int post= (int) holder.img_bookmark.getTag();
 
+        holder.img_video.setTag(position);
+        holder.img_video.setOnClickListener(this);
 
         holder.img_bookmark.setTag(position);
         holder.img_bookmark.setOnClickListener(this);
@@ -244,7 +253,7 @@ public class CategoryFlipAdapter extends BaseAdapter implements View.OnClickList
     static class ViewHolder {
         TextView post_text, post_heading,post_publisher,post_time,ticker_text;
         SmartImageView news_img;
-        ImageButton img_bookmark,img_pugMark,img_share;
+        ImageButton img_bookmark,img_pugMark,img_share,img_video;
         TextView btnText;
     }
 
@@ -332,6 +341,12 @@ public class CategoryFlipAdapter extends BaseAdapter implements View.OnClickList
                 Intent intent2=new Intent(context,TickerNews.class);
                 intent2.putExtra("NEWSID",Constant.tickerID);
                 context.startActivity(intent2);
+                break;
+            case R.id.news_video:
+                int posHeadingVideo= (int) v.getTag();
+                Intent intentVideo= new Intent(context, NewsWebView.class);
+                intentVideo.putExtra("NewsURL", Constant.categoryNewsURL[posHeadingVideo]);
+                context.startActivity(intentVideo);
                 break;
 
         }

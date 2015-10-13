@@ -119,7 +119,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
         this.context = context;
         activity =act;
         progressDialog=pd;
-        deviceID= Configuration.getSharedPrefrenceValue(context,Constant.SHARED_PREFERENCE_ANDROID_ID);
+        deviceID= Configuration.getSharedPrefrenceValue(context, Constant.SHARED_PREFERENCE_ANDROID_ID);
         inflater = LayoutInflater.from(context);
         for (int i = 0; i < Constant.newsSize; i++) {
             System.out.println("New Item Added (Constuctor)---->" + new Item());
@@ -188,6 +188,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
 
             holder.img_bookmark= (ImageButton) convertView.findViewById(R.id.img_btn_add_post_bookmark);
             holder.img_pugMark= (ImageButton) convertView.findViewById(R.id.img_btn_post_setting);
+            holder.img_video= (ImageButton) convertView.findViewById(R.id.news_video);
             holder.img_share= (ImageButton) convertView.findViewById(R.id.img_btn_post_share);
             holder.ticker_text=(TextView) convertView.findViewById(R.id.ticker_text);
             holder.llRegresh= (LinearLayout) convertView.findViewById(R.id.layout_hit_refresh);
@@ -231,7 +232,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
             holder.llRead.setVisibility(View.VISIBLE);
             holder.llSwipe.setVisibility(View.VISIBLE);
             holder.btnGotIt.setVisibility(View.VISIBLE);
-            holder.rlHeader.setBackgroundResource(R.drawable.black_overlay);
+            //holder.rlHeader.setBackgroundResource(R.drawable.black_overlay);
             ii=0;
         }
         else
@@ -251,7 +252,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
                     holder.llBreaking.setVisibility(View.VISIBLE);
                     holder.llTag.setVisibility(View.VISIBLE);
                     holder.btnGotIt.setVisibility(View.VISIBLE);
-                    holder.rlHeader.setBackgroundResource(R.drawable.black_overlay);
+                   // holder.rlHeader.setBackgroundResource(R.drawable.black_overlay);
                 } else {
                     holder.llCategory.setVisibility(View.INVISIBLE);
                     holder.llEvent.setVisibility(View.INVISIBLE);
@@ -304,6 +305,13 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
 
         holder.post_text.setText(Html.fromHtml(Constant.content[position] + " " + text));
 
+        if(Constant.video[position].equals("1")){
+            holder.img_video.setVisibility(View.VISIBLE);
+        }
+        else {
+            holder.img_video.setVisibility(View.GONE);
+        }
+
         //holder.news_img.setImageUrl(Constant.imageURL[position]);
 
         Picasso.with(context)
@@ -313,6 +321,8 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
                 .into(holder.news_img);
 
         holder.ticker_text.setText(Constant.tickerTitle);
+        holder.img_video.setTag(position);
+        holder.img_video.setOnClickListener(this);
 
         holder.ticker_text.setTag(position);
         holder.ticker_text.setOnClickListener(this);
@@ -367,7 +377,7 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
     static class ViewHolder {
         TextView post_text, post_heading,post_publisher,post_time,ticker_text;
         SmartImageView news_img;
-        ImageButton img_bookmark,img_pugMark,img_share;
+        ImageButton img_bookmark,img_pugMark,img_share,img_video;
         TextView btnText;
         LinearLayout llRegresh,llRead,llSwipe,llBreaking,llTag,llEvent,llCategory;
         RelativeLayout rlHeader;
@@ -459,8 +469,12 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
                 context.startActivity(intent2);
 
                 break;
-
-
+            case R.id.news_video:
+                int posHeadingVideo= (int) v.getTag();
+                Intent intentVideo= new Intent(context, NewsWebView.class);
+                intentVideo.putExtra("NewsURL", Constant.newsURL[posHeadingVideo]);
+                context.startActivity(intentVideo);
+                break;
         }
     }
 
@@ -625,7 +639,6 @@ public class FlipAdapter extends BaseAdapter implements OnClickListener {
         i.setType("image/*");
         i.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(path)));
         i.putExtra(Intent.EXTRA_TEXT, textLink+"\n"+"#GetNewsd"+"\n"+"www.newsd.in/app");
-
         activity.startActivity(i);
     }
 

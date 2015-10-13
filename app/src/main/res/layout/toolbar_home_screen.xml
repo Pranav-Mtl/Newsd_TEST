@@ -29,8 +29,9 @@
                     android:layout_height="24dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginBottom="10dp"
+                    android:visibility="gone"
                     android:background="@drawable/refresh" />
 
 

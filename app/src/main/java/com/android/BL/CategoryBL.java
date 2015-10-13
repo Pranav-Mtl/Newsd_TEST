@@ -265,6 +265,7 @@ public class CategoryBL {
             Constant.newsURL=new String[Constant.newsSize];
             Constant.newsID=new String[Constant.newsSize];
             Constant.tag=new String[Constant.newsSize];
+            Constant.video=new String[Constant.newsSize];
             Constant.followStatus=new int[Constant.newsSize];
             Constant.bookmarkStatus=new int[Constant.newsSize];
             ChatPeopleBE people = new ChatPeopleBE();
@@ -282,6 +283,7 @@ public class CategoryBL {
                 Constant.imageURL[i]=jsonObjected.get("image").toString();
                 Constant.newsID[i]=jsonObjected.get("news_id").toString();
                 Constant.newsURL[i]=jsonObjected.get("main_news").toString();
+                Constant.video[i]=jsonObjected.get("video").toString();
                 Constant.tag[i]=jsonObjected.get("tag").toString();
                 Constant.followStatus[i]=Integer.valueOf(jsonObjected.get("follow_status").toString());
                 Constant.bookmarkStatus[i]=Integer.valueOf(jsonObjected.get("bookmark_status").toString());
@@ -380,6 +382,7 @@ public class CategoryBL {
             Constant.newsID=createNewArray(Constant.newsID,jsonArray.size());
             Constant.newsURL=createNewArray(Constant.newsURL, jsonArray.size());
             Constant.tag=createNewArray(Constant.tag, jsonArray.size());
+            Constant.video=createNewArray(Constant.video, jsonArray.size());
             Constant.followStatus=createNewIntegerArray(Constant.followStatus, jsonArray.size());
             Constant.bookmarkStatus=createNewIntegerArray(Constant.bookmarkStatus,jsonArray.size());
            // Constant.bookmarkStatus=new int[Constant.newsSize];
@@ -398,6 +401,7 @@ public class CategoryBL {
                 Constant.newsID[Constant.last+i]=jsonObjected.get("news_id").toString();
                 Constant.newsURL[Constant.last+i]=jsonObjected.get("main_news").toString();
                 Constant.tag[Constant.last+i]=jsonObjected.get("tag").toString();
+                Constant.video[Constant.last+i]=jsonObjected.get("video").toString();
                 Constant.followStatus[Constant.last+i]=Integer.valueOf(jsonObjected.get("follow_status").toString());
                 Constant.bookmarkStatus[Constant.last+i]=Integer.valueOf(jsonObjected.get("bookmark_status").toString());
                 ChatPeopleBE curChatObj = addToChat(jsonObjected.get("news_id").toString(), jsonObjected.get("title").toString(),jsonObjected.get("content").toString(),jsonObjected.get("tag").toString(),jsonObjected.get("source").toString(),jsonObjected.get("image").toString(),jsonObjected.get("main_news").toString(),jsonObjected.get("follow_status").toString(),jsonObjected.get("bookmark_status").toString());

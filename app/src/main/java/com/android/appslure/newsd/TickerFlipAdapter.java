@@ -152,7 +152,7 @@ public class TickerFlipAdapter extends BaseAdapter implements View.OnClickListen
             holder.news_img= (SmartImageView)convertView.findViewById(R.id.news_img);
             holder.btnText = (TextView) convertView.findViewById(R.id.post_heading);
             holder.post_text = (TextView) convertView.findViewById(R.id.post_text);
-
+            holder.img_video= (ImageButton) convertView.findViewById(R.id.news_video);
             holder.img_bookmark= (ImageButton) convertView.findViewById(R.id.img_btn_add_post_bookmark);
             holder.img_pugMark= (ImageButton) convertView.findViewById(R.id.img_btn_post_setting);
             holder.img_share= (ImageButton) convertView.findViewById(R.id.img_btn_post_share);
@@ -198,6 +198,16 @@ public class TickerFlipAdapter extends BaseAdapter implements View.OnClickListen
         holder.ticker_text.setTag(position);
         holder.ticker_text.setOnClickListener(this);
 
+        holder.img_video.setTag(position);
+        holder.img_video.setOnClickListener(this);
+
+        if(Constant.tickerVideo[position].equals("1")){
+            holder.img_video.setVisibility(View.VISIBLE);
+        }
+        else {
+            holder.img_video.setVisibility(View.GONE);
+        }
+
 
        /* if(mHighlightedPositions[position]) {
             holder.img_share.setBackgroundResource(R.drawable.post_share_img);
@@ -231,7 +241,7 @@ public class TickerFlipAdapter extends BaseAdapter implements View.OnClickListen
     static class ViewHolder {
         TextView post_text, post_heading,post_publisher,post_time,ticker_text;
         SmartImageView news_img;
-        ImageButton img_bookmark,img_pugMark,img_share;
+        ImageButton img_bookmark,img_pugMark,img_share,img_video;
         TextView btnText;
     }
 
@@ -306,19 +316,12 @@ public class TickerFlipAdapter extends BaseAdapter implements View.OnClickListen
                 break;
               /*  Toast.makeText(context,Constant.title[Constant.currentPage-1],Toast.LENGTH_LONG).show();
                 new DownloadWebPageTask().execute(deviceID, Constant.newsID[Constant.currentPage-1]);*/
-            case R.id.ticker_text:
-
-               /* if (callback != null) {
-                    System.out.println("LAST PAGE");
-                    callback.onPageRequested(getCount() - 1);
-                }*/
-
-                int posTicker= (int) v.getTag();
-
-               /* Intent intent2=new Intent(context,TickerNews.class);
-                intent2.putExtra("NEWSID",Constant.tickerID);
-                context.startActivity(intent2);*/
-
+            case R.id.news_video:
+                int posHeadingVideo= (int) v.getTag();
+                Intent intentVideo= new Intent(context, NewsWebView.class);
+                intentVideo.putExtra("NewsURL", Constant.tickerNewsURL[posHeadingVideo]);
+                context.startActivity(intentVideo);
+                break;
 
         }
     }

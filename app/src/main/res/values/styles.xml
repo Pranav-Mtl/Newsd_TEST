@@ -3,6 +3,12 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:actionOverflowButtonStyle">@style/MyCustomTheme</item>
+    </style>
+
+    <style name="MyCustomTheme">
+        <item name="android:src">@drawable/ic_settings</item>
+        <item name="android:layout_marginBottom">13dp</item>
     </style>
 
     <style name="MyCustomDialog" parent="Theme.AppCompat.Dialog">
